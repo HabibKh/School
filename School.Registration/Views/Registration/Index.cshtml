@@ -1,0 +1,45 @@
+﻿@using School.Registration;
+@model StudentViewModel;
+
+@{
+    ViewData["Title"] = "Registration Index";
+}
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<h1>Registration Index</h1>
+<form method="post" asp-controller="Registration" asp-action="Create">
+    <br />
+    <div asp-validation-summary="ModelOnly"></div>
+    <br />
+    <label asp-for="FirstName">First Name:</label>
+    <br />
+    <input type="text" asp-for="FirstName" />
+    <span asp-validation-for="FirstName"></span>
+    <br />
+    <label asp-for="LastName">Last Name:</label>
+    <br />
+    <input type="text" asp-for="LastName" />
+    <span asp-validation-for="LastName"></span>
+    <br />
+    <label asp-for="DateOfBirth">DOB:</label>
+    <br />
+    <input type="date" asp-for="DateOfBirth" />
+    <span asp-validation-for="DateOfBirth"></span>
+    <br />
+    <label asp-for="Email">Email:</label>
+    <br />
+
+    <input type="email" asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+    <br />
+    <label asp-for="Message">Message:</label>
+    <br />
+    <textarea asp-for="Message" rows="4"></textarea>
+    <span asp-validation-for="Message"></span>
+    <br />
+    <button type="submit">Submit</button>
+</form>
